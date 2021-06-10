@@ -4116,7 +4116,7 @@ input[type=button].btn-block {
     padding-left: 0;
   }
 .masthead {min-height: 55rem !important;}
-.masthead h1 {font-size: 1.7rem;}
+.masthead h1 {font-size: 1.7rem !important;}
 }
 @media (min-width: 576px) {
   .navbar-expand-sm {

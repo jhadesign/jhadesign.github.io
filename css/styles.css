@@ -4115,6 +4115,8 @@ input[type=button].btn-block {
     padding-right: 0;
     padding-left: 0;
   }
+.masthead {min-height: 55rem !important;}
+.masthead h1 {font-size: 1.7rem;}
 }
 @media (min-width: 576px) {
   .navbar-expand-sm {
@@ -4188,6 +4190,7 @@ input[type=button].btn-block {
   .navbar-expand-md .navbar-toggler {
     display: none;
   }
+.masthead {min-height: 55rem !important;}
 }
 @media (max-width: 991.98px) {
   .navbar-expand-lg > .container,
@@ -4524,6 +4527,7 @@ input[type=button].btn-block {
     margin-bottom: 0;
     margin-left: 0.75rem;
   }
+.masthead {min-height: 55rem !important;}
 }
 
 .card-group > .card {

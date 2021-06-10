@@ -1,2 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JHA DESIGN</title>
 
-test
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+<!-- Google fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<style>
+:root {
+  --clr-neon: hsl(888 100% 54%);
+  --clr-bg: hsl(222 21% 16%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+  background: var(--clr-bg);
+  font-family: "Lato", cursive;
+  color: var(--clr-neon);
+  padding: 0.25em;
+}
+
+.neon-button {
+  font-size: 2rem;
+
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+  position: relative;
+}
+
+
+
+.neon-button::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(2em);
+  opacity: 0.7;
+}
+
+.neon-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-neon);
+  opacity: 0;
+  background-color: var(--clr-neon);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+  opacity: 1;
+}
+.neon-button:hover::after,
+.neon-button:focus::after {
+  opacity: 1;
+}
+
+svg {
+    stroke-width: 0.125em;
+    width:100%;
+    height:100%;
+}
+.text--line {
+  font-size: 6rem;
+  font-family: 'Lato', sans-serif;
+  font-weight:700;
+}
+
+#outline {
+  fill: none;
+  stroke:#fff;
+  stroke-dasharray:100%;
+  stroke-dashoffset:0;
+  animation-name: outline;
+  animation-duration: 3.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+#fill {
+  fill-opacity: 0;
+  fill: teal;
+  animation-name: fill;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+
+@keyframes outline{
+  from{
+    stroke-dashoffset:100%;
+  }
+  
+  to{
+    stroke-dashoffset:0;
+  }
+}
+
+@keyframes fill{
+  from{
+    fill-opacity: 0;
+  }
+  
+  to{
+    fill-opacity: 1;
+  }
+}
+
+
+/* put space between columns when stacked on smaller viewports */
+
+@media (max-width: 768px) {
+
+  [class*="col-"] {
+      margin-bottom: 50px;
+  }
+
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 800 200" xml:space="preserve">
+		  <symbol id="text-copy">
+		    <text text-anchor="middle" x="50%" y="50%" class="text--line">JHA DESIGN</text>
+		  </symbol>
+		  <g class="g-ants">
+		    <use xlink:href="#text-copy" class="text-copy" id="outline"></use>
+		    <use xlink:href="#text-copy" class="text-copy" id="fill"></use> 
+	  	  </g>
+	    	 </svg>
+	</div>
+	<div class="row">
+		<div class="col-sm text-center">
+			<a href="spotterLight.html" class="neon-button">Aircraft SpotterLight</a>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

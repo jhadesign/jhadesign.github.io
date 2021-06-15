@@ -221,8 +221,6 @@ After=network-online.target
 [Service]
 ExecStart=/usr/bin/python3 -u ac_spotterlight.py
 WorkingDirectory=/home/pi/ac_spotterlight
-StandardOutput=append:/home/pi/log/ac_spotterlight.log
-StandardError=append:/home/pi/log/ac_spotterlight.log
 Restart=always
 RestartSec=300
 User=root
